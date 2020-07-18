@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -241,7 +242,7 @@ namespace OpenHab.UniFiProxy.Model
             public bool isRebooting { get; set; }
             public bool isSshEnabled { get; set; }
             public bool canManage { get; set; }
-            public bool isHidden { get; set; }
+            public bool? isHidden { get; set; }
             public long? lastMotion { get; set; }
             public int micVolume { get; set; }
             public bool isMicEnabled { get; set; }
@@ -303,8 +304,8 @@ namespace OpenHab.UniFiProxy.Model
         public class Location
         {
             public bool isAway { get; set; }
-            public object latitude { get; set; }
-            public object longitude { get; set; }
+            public string? latitude { get; set; }
+            public string? longitude { get; set; }
         }
 
         public class CloudAccount
@@ -431,9 +432,9 @@ namespace OpenHab.UniFiProxy.Model
         {
             public bool isAway { get; set; }
             public bool isGeofencingEnabled { get; set; }
-            public double latitude { get; set; }
-            public double longitude { get; set; }
-            public int radius { get; set; }
+            public string? latitude { get; set; }
+            public string? longitude { get; set; }
+            public string? radius { get; set; }
         }
 
         public class StorageUtilization
@@ -477,7 +478,7 @@ namespace OpenHab.UniFiProxy.Model
             public string hardwarePlatform { get; set; }
             public Ports ports { get; set; }
             public object setupCode { get; set; }
-            public int uptime { get; set; }
+            public long uptime { get; set; }
             public long lastSeen { get; set; }
             public bool isUpdating { get; set; }
             public long lastUpdateAt { get; set; }
